@@ -24,7 +24,6 @@ public class Audio implements Parcelable {
         artist = in.readString();
     }
 
-
     public static final Creator<Audio> CREATOR = new Creator<Audio>() {
         @Override
         public Audio createFromParcel(Parcel in) {
@@ -68,6 +67,7 @@ public class Audio implements Parcelable {
     public void setArtist(String artist) {
         this.artist = artist;
     }
+
 
     @Override
     public int describeContents() {

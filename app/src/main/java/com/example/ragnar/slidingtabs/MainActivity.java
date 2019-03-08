@@ -28,7 +28,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements  Tab1.OnFragmentInteractionListener,Tab2.OnFragmentInteractionListener,Tab3.OnFragmentInteractionListener{
     public static ArrayList<Audio> audioList;
-    private MediaPlayerService player;
+    //private MediaPlayerService player;
     boolean serviceBound = false;
     Toolbar myToolbar;
 
@@ -122,9 +122,9 @@ public class MainActivity extends AppCompatActivity implements  Tab1.OnFragmentI
     protected void onDestroy() {
         super.onDestroy();
         if (serviceBound) {
-            unbindService(serviceConnection);
+            //unbindService(serviceConnection);
             //service is active
-            player.stopSelf();
+            //player.stopSelf();
         }
     }
 
@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity implements  Tab1.OnFragmentI
     }
 
     //Binding this Client to the AudioPlayer Service
-    private ServiceConnection serviceConnection = new ServiceConnection() {
+    /*private ServiceConnection serviceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             // We've bound to LocalService, cast the IBinder and get LocalService instance
@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity implements  Tab1.OnFragmentI
             //Service is active
             //Send media with BroadcastReceiver
         }
-    }
+    }*/
 
 
     //retrieves the data from the device in ascending order.
@@ -177,7 +177,7 @@ public class MainActivity extends AppCompatActivity implements  Tab1.OnFragmentI
 
         if (cursor != null && cursor.getCount() > 0) {
             Audio audiopar;
-            audioList = new ArrayList<>();
+            audioList = new ArrayList<Audio>();
             while (cursor.moveToNext()) {
                 String data = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.DATA));
                 String title = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.TITLE));
@@ -215,7 +215,7 @@ public class MainActivity extends AppCompatActivity implements  Tab1.OnFragmentI
 
                     loadAudio();
                     // permission granted and now can proceed
-                    playAudio(audioList.get(0).getData());; //a sample method called
+                    //playAudio(audioList.get(0).getData());; //a sample method called
 
                 } else {
 

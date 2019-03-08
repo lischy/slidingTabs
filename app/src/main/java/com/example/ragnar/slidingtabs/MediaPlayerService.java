@@ -1,3 +1,4 @@
+/*
 package com.example.ragnar.slidingtabs;
 
 import android.annotation.SuppressLint;
@@ -17,7 +18,8 @@ public class MediaPlayerService extends Service implements MediaPlayer.OnComplet
         MediaPlayer.OnPreparedListener, MediaPlayer.OnErrorListener, MediaPlayer.OnSeekCompleteListener,
         MediaPlayer.OnInfoListener, MediaPlayer.OnBufferingUpdateListener,
 
-        AudioManager.OnAudioFocusChangeListener {
+        AudioManager.OnAudioFocusChangeListener {*/
+/*
 
     private MediaPlayer mediaPlayer;
     //path to the audio file
@@ -230,5 +232,7 @@ public class MediaPlayerService extends Service implements MediaPlayer.OnComplet
             mediaPlayer.release();
         }
         removeAudioFocus();
-    }
+    }*//*
+
 }
+*/
